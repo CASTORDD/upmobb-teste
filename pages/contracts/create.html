@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <form hidden data-create-form class="contracts-create" novalidate>
+        <h3>Criar contrato</h3>
+        <label>Contratante* <input name="contractor" required /></label>
+        <label>Documento* <input name="document" required /></label>
+        <label
+          >Modelo*
+          <select name="model" required>
+            <option value="rental">rental</option>
+            <option value="loan">loan</option>
+            <option value="social">social</option>
+            <option value="express">express</option>
+          </select></label
+        >
+        <label>Endereço <input name="address" /></label>
+        <label>Número <input name="number" /></label>
+        <div class="contracts-create__actions">
+          <button class="btn-actions" type="submit">Salvar</button>
+          <button class="btn-actions" type="button" data-close-create>
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

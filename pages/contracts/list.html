@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UpMobb - Lista de Contratos</title>
+    <link rel="stylesheet" href="../../styles/global.css" />
+    <link rel="stylesheet" href="../../styles/contracts.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Contracts</h1>
+      <p class="contracts-empty" data-contracts-empty hidden></p>
+      <section class="contracts-controls">
+        <input data-filter-contractor placeholder="Buscar por contratante" />
+        <input data-filter-document placeholder="Buscar por documento" />
+        <select data-filter-model>
+          <option value="all">Todos os modelos</option>
+          <option value="rental">rental</option>
+          <option value="loan">loan</option>
+          <option value="social">social</option>
+          <option value="express">express</option>
+        </select>
+        <select data-filter-status>
+          <option value="all">Todos os status</option>
+          <option value="draft">draft</option>
+          <option value="sent">sent</option>
+          <option value="await">await</option>
+          <option value="signed">signed</option>
+          <option value="cancel">cancel</option>
+        </select>
+      </section>
+      <table class="contract-list">
+        <thead>
+          <tr>
+            <th data-sort="model:">Modelo</th>
+            <th data-sort="contractor">Contratante</th>
+            <th>Documento</th>
+            <th>Endereço</th>
+            <th data-sort="status">Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody data-contracts-body></tbody>
+      </table>
+      <div class="contracts-pagination" data-contracts-pagination></div>
+    </div>
+    <script
+      type="module"
+      src="../../scripts/contracts/contracts.list.js"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+.contract-list {
+  width: 100%;
+  border-collapse: collapse;
+}
+.contract-list th,
+.contract-list td {
+  border-bottom: 1px solid #f1f1f1;
+  padding: 8px;
+  text-align: left;
+}
+.contract-list tbody tr:hover {
+  background-color: #f7f7f7;
+  transition: all 0.3s ease-in-out;
+}
+
+.badge {
+  width: 100px;
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  &.draft {
+    background-color: rgb(125, 123, 122);
+  }
+  &.sent {
+    background-color: rgb(25, 107, 247);
+  }
+  &.await {
+    background-color: rgb(250, 159, 22);
+  }
+  &.signed {
+    background-color: rgb(77, 171, 77);
+  }
+  &.cancel {
+    background-color: rgb(247, 66, 66);
+  }
+}
+
+.btn-actions {
+  background-color: aqua;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-actions:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.contracts-empty {
+  margin: 0 0 12px;
+  color: #666;
+}
+
+.contracts-pagination {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  gap: 16px;
+}
+
+.contracts-pagination__summary {
+  color: #666;
+}
+
+.contracts-pagination__actions {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.contracts-controls {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+  flex-wrap: wrap;
+}
+
+.contracts-controls input,
+.contracts-controls select {
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+[data-contracts-loading],
+[data-contracts-saving] {
+  margin: 8px 0;
+  color: #444;
+}
+
+.contracts-create {
+  border: 1px solid #e6e6e6;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 6px;
+  background: #fafafa;
+  display: grid;
+  gap: 8px;
+}
+
+.contracts-create label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.contracts-create__actions {
+  display: flex;
+  gap: 8px;
+}
