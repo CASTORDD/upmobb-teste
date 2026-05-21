@@ -123,16 +123,3 @@ export async function getContractsPaged(opts) {
 export async function getContracts(page = 1, limit = 10) {
   return getContractsPaged({ page, limit });
 }
-
-export function saveLocalContract(contract) {
-  try {
-    if (typeof window === "undefined" || !window.localStorage) return;
-    const key = "contracts:local";
-    const raw = window.localStorage.getItem(key);
-    const list = raw ? JSON.parse(raw) : [];
-    list.unshift(contract);
-    window.localStorage.setItem(key, JSON.stringify(list));
-  } catch (e) {
-    // ignore
-  }
-}

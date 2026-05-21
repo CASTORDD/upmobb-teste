@@ -12,16 +12,24 @@
       <h1>Contracts</h1>
       <p class="contracts-empty" data-contracts-empty hidden></p>
       <section class="contracts-controls">
-        <input data-filter-contractor placeholder="Buscar por contratante" />
-        <input data-filter-document placeholder="Buscar por documento" />
-        <select data-filter-model>
+        <input
+          name="by_contractor"
+          data-filter-contractor
+          placeholder="Buscar por contratante"
+        />
+        <input
+          name="by_document"
+          data-filter-document
+          placeholder="Buscar por documento"
+        />
+        <select name="by_model" data-filter-model>
           <option value="all">Todos os modelos</option>
           <option value="rental">rental</option>
           <option value="loan">loan</option>
           <option value="social">social</option>
           <option value="express">express</option>
         </select>
-        <select data-filter-status>
+        <select name="by_status" data-filter-status>
           <option value="all">Todos os status</option>
           <option value="draft">draft</option>
           <option value="sent">sent</option>
@@ -29,6 +37,7 @@
           <option value="signed">signed</option>
           <option value="cancel">cancel</option>
         </select>
+        <a href="create.html" class="btn-actions">Criar contrato</a>
       </section>
       <table class="contract-list">
         <thead>

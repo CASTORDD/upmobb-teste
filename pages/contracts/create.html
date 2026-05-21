@@ -4,13 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="../../styles/global.css" />
+    <link rel="stylesheet" href="../../styles/contracts-preview.css" />
   </head>
   <body>
     <div class="container">
-      <form hidden data-create-form class="contracts-create" novalidate>
-        <h3>Criar contrato</h3>
-        <label>Contratante* <input name="contractor" required /></label>
-        <label>Documento* <input name="document" required /></label>
+      <div class="contracts-preview-header">
+        <a href="list.html"> <span class="arrow">&laquo;</span>Voltar</a>
+        <h1>Criar contrato</h1>
+      </div>
+      <form data-create-form class="contracts-create">
+        <label
+          >Contratante*
+          <div class="form-item">
+            <input name="contractor" required />
+          </div>
+        </label>
+        <label
+          >Documento*
+          <div class="form-item">
+            <input type="number" name="document" required />
+          </div>
+        </label>
         <label
           >Modelo*
           <select name="model" required>
@@ -24,11 +39,15 @@
         <label>Número <input name="number" /></label>
         <div class="contracts-create__actions">
           <button class="btn-actions" type="submit">Salvar</button>
-          <button class="btn-actions" type="button" data-close-create>
+          <button class="btn-actions-secondary" type="button" data-close-create>
             Cancelar
           </button>
         </div>
       </form>
     </div>
+    <script
+      type="module"
+      src="../../scripts/contracts/contracts.create.js"
+    ></script>
   </body>
 </html>

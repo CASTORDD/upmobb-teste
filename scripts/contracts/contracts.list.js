@@ -52,7 +52,7 @@ function renderRows(contracts) {
         <td>${contract.contractor ?? "-"}</td>
         <td>${contract.document ?? "-"}</td>
         <td>${contract.address ?? "-"}, ${contract.number ?? "-"}</td>
-        <td>${statusLabel[contract.status] ?? contract.status ?? "-"}</td>
+        <td><span class="badge ${contract.status}">${statusLabel[contract.status] ?? contract.status ?? "-"}</span></td>
         <td>
           <button class="btn-actions" type="button" data-action="details" data-contract-id="${contract.id}">Detalhes</button>
           <button class="btn-actions" type="button" data-action="preview" data-contract-id="${contract.id}">Prévia</button>
@@ -121,7 +121,7 @@ async function loadContracts() {
 
     if (data.length === 0) {
       renderRows([]);
-      renderEmptyState("No contracts found.");
+      renderEmptyState("Contrato não encontrado.");
       renderPagination(meta);
       return;
     }
@@ -156,7 +156,7 @@ function handlePaginationClick(event) {
   }
 }
 
-function handleTableActions(event) {
+async function handleTableActions(event) {
   const target = event.target;
   if (!(target instanceof HTMLElement)) return;
   const action = target.dataset.action;
@@ -170,22 +170,20 @@ function handleTableActions(event) {
   }
 }
 
-function showContractDetails(id) {
-  const rows = getTableBody().querySelectorAll("tr");
-  for (const r of rows) {
-    const btn = r.querySelector(`[data-contract-id="${id}"]`);
-    if (btn) {
-      const cells = r.querySelectorAll("td");
-      alert(
-        "Detalhes:\n" +
-          Array.from(cells)
-            .map((c) => c.textContent.trim())
-            .join("\n"),
-      );
-      return;
-    }
+async function showContractDetails(id) {
+  const res = await queryContracts({ page: 1, limit: 1000 });
+  const contract = res.data.find((c) => c.id === id);
+  if (!contract) {
+    alert("Contract not found");
+    return;
   }
-  alert("Contract not found");
+
+  alert(
+    "Detalhes:\n" +
+      Object.entries(contract)
+        .map(([key, value]) => `${key}: ${value}`)
+        .join("\n"),
+  );
 }
 
 function showContractPreview(id) {

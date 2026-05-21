@@ -13,48 +13,15 @@
   transition: all 0.3s ease-in-out;
 }
 
-.badge {
-  width: 100px;
-  display: inline-block;
-  padding: 4px 8px;
-  border-radius: 4px;
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
-  text-align: center;
-  &.draft {
-    background-color: rgb(125, 123, 122);
-  }
-  &.sent {
-    background-color: rgb(25, 107, 247);
-  }
-  &.await {
-    background-color: rgb(250, 159, 22);
-  }
-  &.signed {
-    background-color: rgb(77, 171, 77);
-  }
-  &.cancel {
-    background-color: rgb(247, 66, 66);
-  }
-}
-
-.btn-actions {
-  background-color: aqua;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.btn-actions:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
 .contracts-empty {
-  margin: 0 0 12px;
   color: #666;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  padding: 16px;
+  background-color: #d9534f10;
+  border-radius: 16px;
+  border: 1px solid darksalmon;
 }
 
 .contracts-pagination {
@@ -95,25 +62,4 @@
 [data-contracts-saving] {
   margin: 8px 0;
   color: #444;
-}
-
-.contracts-create {
-  border: 1px solid #e6e6e6;
-  padding: 12px;
-  margin-top: 12px;
-  border-radius: 6px;
-  background: #fafafa;
-  display: grid;
-  gap: 8px;
-}
-
-.contracts-create label {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.contracts-create__actions {
-  display: flex;
-  gap: 8px;
 }
